@@ -1,13 +1,68 @@
+// This dynamically applies the /portfolio prefix ONLY when hosted on GitHub Pages
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 export const PORTFOLIO_DATA = {
+  // Core Identity
   name: "Tushar Patil",
-  title: "Technology & Product Leader | AI Platforms & Health-Tech",
-  subTitle: "0-to-1 AI Product Scaling • Embedded Systems Architect • Digital Therapeutics",
+  role: "Lead – Device Engineering",
   location: "Navi Mumbai, India",
-  email: "tusharjpatil24@gmail.com",
-  phone: "9819401006",
+  
+  // Contact & Links
+  email: "tusharpatil24@gmail.com",
   github: "https://github.com/embedologist",
-  linkedin: "https://www.linkedin.com/in/tjp24",
-  resumePath: "/assets/Tushar_Patil_AI_Resume.pdf",
-  profileImage: "/assets/profile.jpg",
-  summary: "Technology and product leader with 15+ years of experience owning product strategy, roadmap, and lifecycle execution for AI-enabled healthcare and wearable technology platforms. Nearly a decade as Chief Technology Officer, defining product vision and driving 0-to-1 execution for venture-backed startups."
+  linkedin: "https://linkedin.com/in/", // Add your specific LinkedIn handle here
+  
+  // Dynamic Asset Paths (Fixes the GitHub Pages 404 error)
+  image: `${basePath}/assets/profile.jpg`,
+  resume: `${basePath}/assets/Tushar_Patil_AI_Resume.pdf`,
+  
+  // Hero Section Content
+  headline: "Architecting AI & Health-Tech Platforms from 0 to 1",
+  subheadline: "0-to-1 AI Product Scaling • Embedded Systems Architect • Digital Therapeutics",
+  about: "Former CTO and Lead Engineer specializing in medical devices, embedded hardware, cloud AI architecture, and digital therapeutics. Patent holder in AI activity classification.",
+  
+  // Stats / Badges
+  stats: [
+    { label: "CTO LEADERSHIP", value: "10 Yrs" },
+    { label: "ENGAGEMENT BOOST", value: "30%" },
+    { label: "PATENT HOLDER", value: "WIPO" }
+  ],
+
+  // Experience Section
+  experience: [
+    {
+      title: "Lead – Device Engineering",
+      company: "Dr. Reddy's Laboratories",
+      period: "Present",
+      description: "Leading medical device engineering, focusing on the design, manufacturability, and supply chain management of drug-delivery systems and wearables."
+    },
+    // Add any other past roles here
+  ],
+
+  // Skills Section
+  skills: [
+    "Embedded Systems Architecture",
+    "Medical Devices (QMS & Regulatory)",
+    "Edge AI & LiteRT",
+    "Digital Therapeutics",
+    "On-Device LLMs",
+    "Cloud AI Architecture"
+  ],
+
+  // Projects Section
+  projects: [
+    {
+      title: "RespiRx Manufacturing & Cost Analysis",
+      category: "Medical Device Engineering",
+      description: "Conducted comprehensive due diligence and BOM cost modeling for advanced nicotine inhaler technology.",
+      tags: ["Due Diligence", "BOM Modeling", "Supply Chain"]
+    },
+    {
+      title: "Metabolic Health AI Framework",
+      category: "Health-Tech Platforms",
+      description: "Researched multimodal AI frameworks and CGM data fusion architectures for metabolic digital twins.",
+      tags: ["AI", "CGM", "Biosensor Networks"]
+    }
+    // Add any other specific projects here
+  ]
 };
