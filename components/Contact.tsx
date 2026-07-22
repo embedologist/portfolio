@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { PORTFOLIO_DATA } from '@/data/portfolio';
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Send } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -13,65 +13,53 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Contact Cards */}
+          {/* Contact Cards - Adjusted padding and spacing to preserve height */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-5 space-y-6"
+            className="lg:col-span-5 flex flex-col justify-between space-y-8"
           >
-            <div className="glass-card p-6 rounded-2xl flex items-center space-x-4">
-              <div className="p-3 bg-cyan-500/10 text-cyan-500 rounded-xl">
-                <Mail className="w-6 h-6" />
+            <div className="glass-card p-8 rounded-2xl flex items-center space-x-5">
+              <div className="p-4 bg-cyan-500/10 text-cyan-500 rounded-xl">
+                <Mail className="w-7 h-7" />
               </div>
               <div>
-                <p className="text-xs text-slate-500 font-semibold">Email Direct</p>
-                <a href={`mailto:${PORTFOLIO_DATA.email}`} className="text-base font-bold hover:text-cyan-500">
+                <p className="text-sm text-slate-500 font-semibold mb-1">Email Direct</p>
+                <a href={`mailto:${PORTFOLIO_DATA.email}`} className="text-lg font-bold hover:text-cyan-500 transition-colors">
                   {PORTFOLIO_DATA.email}
                 </a>
               </div>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl flex items-center space-x-4">
-              <div className="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
-                <Phone className="w-6 h-6" />
+            <div className="glass-card p-8 rounded-2xl flex items-center space-x-5">
+              <div className="p-4 bg-cyan-500/10 text-cyan-400 rounded-xl">
+                <MapPin className="w-7 h-7" />
               </div>
               <div>
-                <p className="text-xs text-slate-500 font-semibold">Phone Direct</p>
-                <a href={`tel:${PORTFOLIO_DATA.phone}`} className="text-base font-bold hover:text-emerald-400">
-                  +91 {PORTFOLIO_DATA.phone}
-                </a>
+                <p className="text-sm text-slate-500 font-semibold mb-1">Location</p>
+                <p className="text-lg font-bold text-slate-900 dark:text-slate-100">{PORTFOLIO_DATA.location}</p>
               </div>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl flex items-center space-x-4">
-              <div className="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl">
-                <MapPin className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="text-xs text-slate-500 font-semibold">Location</p>
-                <p className="text-base font-bold">{PORTFOLIO_DATA.location}</p>
-              </div>
-            </div>
-
-            <div className="flex space-x-4 pt-2">
+            <div className="flex space-x-4 pt-4">
               <a
                 href={PORTFOLIO_DATA.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 glass-card p-4 rounded-xl flex items-center justify-center space-x-2 font-bold hover:border-cyan-500 transition-all"
+                className="flex-1 glass-card p-5 rounded-2xl flex items-center justify-center space-x-2 font-bold hover:border-cyan-500 transition-all text-slate-800 dark:text-slate-200"
               >
                 <Linkedin className="w-5 h-5 text-cyan-500" />
-                <span>LinkedIn Profile</span>
+                <span>LinkedIn</span>
               </a>
               <a
                 href={PORTFOLIO_DATA.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 glass-card p-4 rounded-xl flex items-center justify-center space-x-2 font-bold hover:border-cyan-500 transition-all"
+                className="flex-1 glass-card p-5 rounded-2xl flex items-center justify-center space-x-2 font-bold hover:border-cyan-500 transition-all text-slate-800 dark:text-slate-200"
               >
-                <Github className="w-5 h-5 text-slate-200" />
-                <span>GitHub Repos</span>
+                <Github className="w-5 h-5" />
+                <span>GitHub</span>
               </a>
             </div>
           </motion.div>

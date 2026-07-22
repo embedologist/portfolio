@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { PORTFOLIO_DATA } from '@/data/portfolio';
-import { ArrowRight, FileText, Mail, ShieldCheck, Cpu, Activity } from 'lucide-react';
+import { ArrowRight, FileText, ShieldCheck, Activity } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -36,7 +36,7 @@ export default function Hero() {
           </p>
 
           <p className="text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
-            Former CTO and Lead Engineer specializing in medical devices, embedded hardware, cloud AI architecture, and digital therapeutics. Patent holder in AI activity classification[cite: 1].
+            Former CTO and Lead Engineer specializing in medical devices, embedded hardware, cloud AI architecture, and digital therapeutics. Patent holder in AI activity classification.
           </p>
 
           <div className="pt-4 flex flex-wrap gap-4">
@@ -82,22 +82,23 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-5 flex justify-center"
         >
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl p-2 glass-panel border border-cyan-500/30 shadow-2xl">
+          {/* Increased size from w-80 to w-96 and lg:w-[420px] */}
+          <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[420px] lg:h-[420px] rounded-3xl p-2 glass-panel border border-cyan-500/30 shadow-2xl">
             <div className="w-full h-full rounded-2xl overflow-hidden relative">
               <img
                 src={PORTFOLIO_DATA.profileImage}
                 alt={PORTFOLIO_DATA.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="text-lg font-bold">{PORTFOLIO_DATA.name}</p>
-                <p className="text-xs text-cyan-400 font-medium">{PORTFOLIO_DATA.location}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/20 to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 text-white">
+                <p className="text-xl font-bold">{PORTFOLIO_DATA.name}</p>
+                <p className="text-sm text-cyan-400 font-medium">{PORTFOLIO_DATA.location}</p>
               </div>
             </div>
 
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 -left-6 glass-panel px-4 py-3 rounded-2xl flex items-center space-x-3 border border-emerald-500/40">
+            {/* Floating Badge - Moved to -right-6 to prevent overlapping the text */}
+            <div className="absolute -bottom-6 -right-6 glass-panel px-4 py-3 rounded-2xl flex items-center space-x-3 border border-emerald-500/40">
               <Activity className="w-6 h-6 text-emerald-400 animate-pulse" />
               <div>
                 <p className="text-xs font-bold text-slate-800 dark:text-slate-100">AI Medical Devices</p>
