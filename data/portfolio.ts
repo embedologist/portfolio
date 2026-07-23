@@ -1,6 +1,3 @@
-// This dynamically applies the /portfolio prefix ONLY when hosted on GitHub Pages
-const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
-
 export const PORTFOLIO_DATA = {
   // Core Identity
   name: "Tushar Patil",
@@ -12,9 +9,9 @@ export const PORTFOLIO_DATA = {
   github: "https://github.com/embedologist",
   linkedin: "https://linkedin.com/in/", // Add your specific LinkedIn handle here
   
-  // Dynamic Asset Paths (Fixes the GitHub Pages 404 error)
-  image: `${basePath}/assets/profile.jpg`,
-  resume: `${basePath}/assets/Tushar_Patil_AI_Resume.pdf`,
+  // Asset Paths (Clean, absolute paths for custom domain)
+  image: "/profile.jpg",
+  resume: "/Tushar_Patil_AI_Resume.pdf",
   
   // Hero Section Content
   headline: "Architecting AI & Health-Tech Platforms from 0 to 1",
@@ -63,6 +60,5 @@ export const PORTFOLIO_DATA = {
       description: "Researched multimodal AI frameworks and CGM data fusion architectures for metabolic digital twins.",
       tags: ["AI", "CGM", "Biosensor Networks"]
     }
-    // Add any other specific projects here
   ]
 };
