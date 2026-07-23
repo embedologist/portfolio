@@ -68,14 +68,15 @@ export default function Hero() {
           </motion.div>
 
           {/* Right Column - Image Card */}
+          {/* SURGICAL FIX: Changed to flex justify-end to prevent grid stretching */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative hidden lg:block w-full"
+            className="relative hidden lg:flex justify-end items-center w-full"
           >
-            {/* FIX APPLIED HERE: Added max-w-sm and ml-auto to prevent massive scaling */}
-            <div className="relative max-w-sm ml-auto rounded-3xl overflow-hidden bg-slate-900/50 border border-slate-800 p-2 shadow-2xl">
+            {/* SURGICAL FIX: Applied strict width (w-[360px]) so it cannot over-scale */}
+            <div className="relative w-[360px] rounded-3xl overflow-hidden bg-slate-900/50 border border-slate-800 p-2 shadow-2xl">
               <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-slate-800 group">
                 <img 
                   src={PORTFOLIO_DATA.image} 
@@ -83,17 +84,17 @@ export default function Hero() {
                   className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                 />
                 
-                {/* FIX APPLIED HERE: Taller, darker gradient to stop text overlap */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent pointer-events-none"></div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10 flex flex-col gap-1">
+                {/* SURGICAL FIX: Added pb-10 to push the text up */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 pb-10 z-10 flex flex-col gap-1 pointer-events-none">
                   <p className="text-2xl font-bold text-white drop-shadow-lg">{PORTFOLIO_DATA.name}</p>
                   <p className="text-cyan-400 text-sm font-medium drop-shadow-md">{PORTFOLIO_DATA.location}</p>
                 </div>
               </div>
 
-              {/* Floating Badge - repositioned slightly for the new max-width */}
-              <div className="absolute bottom-6 -left-8 bg-slate-900/95 backdrop-blur-sm border border-slate-700 p-3 rounded-2xl shadow-2xl flex items-center space-x-3 z-20">
+              {/* SURGICAL FIX: Changed to -bottom-6 to push the badge down outside the image */}
+              <div className="absolute -bottom-6 -left-6 bg-slate-900/95 backdrop-blur-sm border border-slate-700 p-3 rounded-2xl shadow-2xl flex items-center space-x-3 z-20">
                 <div className="p-2 bg-emerald-500/20 rounded-lg">
                   <Activity className="w-5 h-5 text-emerald-400" />
                 </div>
