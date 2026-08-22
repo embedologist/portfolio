@@ -72,7 +72,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative hidden lg:flex justify-end items-center w-full"
+            className="relative flex justify-center lg:justify-end items-center w-full"
           >
             {/* SURGICAL FIX: Removed "overflow-hidden" from this specific div so the badge isn't cut off */}
             <div className="relative w-[360px] rounded-3xl bg-slate-900/50 border border-slate-800 p-2 shadow-2xl">
