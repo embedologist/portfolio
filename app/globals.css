@@ -10,9 +10,9 @@
 
 /* Glassmorphism utilities */
 .glass-panel {
-  @apply bg-white/70 dark:bg-navy-900/70 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 shadow-xl;
+  @apply bg-white/80 dark:bg-navy-900/70 backdrop-blur-md border border-slate-200/90 dark:border-slate-800/80 shadow-xl;
 }
 
 .glass-card {
-  @apply bg-white/50 dark:bg-navy-800/50 backdrop-blur-sm border border-slate-200/60 dark:border-slate-800/60 hover:border-cyan-500/50 transition-all duration-300;
+  @apply bg-white/80 dark:bg-navy-800/50 backdrop-blur-sm border border-slate-200/90 dark:border-slate-800/60 hover:border-cyan-500/50 shadow-sm dark:shadow-none transition-all duration-300;
 }

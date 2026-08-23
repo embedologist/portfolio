@@ -1,7 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { PORTFOLIO_DATA } from '@/data/portfolio';
-import { ArrowRight, FileText, Shield, Activity } from 'lucide-react';
+import { ArrowRight, FileText, Shield, Activity, Linkedin, Github } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -17,21 +18,21 @@ export default function Hero() {
             className="space-y-8"
           >
             {/* Top Badge */}
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-cyan-400 text-xs font-bold tracking-wider">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-bold tracking-wider">
               <Shield className="w-4 h-4" />
               <span>15+ YEARS TECH & PRODUCT LEADERSHIP</span>
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl font-extrabold text-white leading-tight tracking-tight">
+              <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight">
                 {PORTFOLIO_DATA.headline}
               </h1>
               
-              <p className="text-lg sm:text-xl text-slate-300 max-w-2xl font-light">
+              <p className="text-lg sm:text-xl text-slate-700 dark:text-slate-300 max-w-2xl font-normal dark:font-light">
                 {PORTFOLIO_DATA.subheadline}
               </p>
 
-              <p className="text-base text-slate-400 max-w-xl leading-relaxed">
+              <p className="text-base text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
                 {PORTFOLIO_DATA.about}
               </p>
             </div>
@@ -40,7 +41,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <a
                 href="#contact"
-                className="px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold transition-colors flex items-center space-x-2 shadow-lg shadow-cyan-500/20"
+                className="px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-white font-bold transition-colors flex items-center space-x-2 shadow-lg shadow-cyan-500/20"
               >
                 <span>Initiate Contact</span>
                 <ArrowRight className="w-5 h-5" />
@@ -49,19 +50,37 @@ export default function Hero() {
                 href={PORTFOLIO_DATA.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold transition-all flex items-center space-x-2"
+                className="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-900 dark:border-slate-700 text-white font-bold transition-all flex items-center space-x-2 shadow-md"
               >
                 <FileText className="w-5 h-5" />
                 <span>Executive Resume</span>
               </a>
+              <a
+                href={PORTFOLIO_DATA.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="p-4 rounded-xl bg-white hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all flex items-center justify-center shadow-md"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={PORTFOLIO_DATA.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="p-4 rounded-xl bg-white hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all flex items-center justify-center shadow-md"
+              >
+                <Github className="w-5 h-5" />
+              </a>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-12 border-t border-slate-800/50 mt-8">
+            <div className="grid grid-cols-3 gap-6 pt-12 border-t border-slate-200 dark:border-slate-800/50 mt-8">
               {PORTFOLIO_DATA.stats.map((stat, idx) => (
                 <div key={idx}>
-                  <p className="text-3xl font-extrabold text-cyan-500 mb-1">{stat.value}</p>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{stat.label}</p>
+                  <p className="text-3xl font-extrabold text-cyan-600 dark:text-cyan-500 mb-1">{stat.value}</p>
+                  <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -75,12 +94,15 @@ export default function Hero() {
             className="relative flex justify-center lg:justify-end items-center w-full"
           >
             {/* SURGICAL FIX: Removed "overflow-hidden" from this specific div so the badge isn't cut off */}
-            <div className="relative w-[360px] rounded-3xl bg-slate-900/50 border border-slate-800 p-2 shadow-2xl">
+            <div className="relative w-[360px] rounded-3xl bg-white/70 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 p-2 shadow-2xl">
               <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-slate-800 group">
-                <img 
+                <Image 
                   src={PORTFOLIO_DATA.image} 
                   alt={PORTFOLIO_DATA.name}
-                  className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 360px"
+                  className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent pointer-events-none"></div>
@@ -91,13 +113,13 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute -bottom-6 -left-6 bg-slate-900/95 backdrop-blur-sm border border-slate-700 p-3 rounded-2xl shadow-2xl flex items-center space-x-3 z-20">
+              <div className="absolute -bottom-6 -left-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border border-slate-200 dark:border-slate-700 p-3 rounded-2xl shadow-2xl flex items-center space-x-3 z-20">
                 <div className="p-2 bg-emerald-500/20 rounded-lg">
-                  <Activity className="w-5 h-5 text-emerald-400" />
+                  <Activity className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white leading-tight">AI Medical Devices</p>
-                  <p className="text-xs text-slate-400 mt-0.5">Production Scaled</p>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white leading-tight">AI Medical Devices</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Production Scaled</p>
                 </div>
               </div>
             </div>

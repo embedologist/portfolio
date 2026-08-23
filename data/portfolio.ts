@@ -5,9 +5,9 @@ export const PORTFOLIO_DATA = {
   location: "Navi Mumbai, India",
   
   // Contact & Links
-  email: "tusharpatil24@gmail.com",
+  email: "embedologist@gmail.com",
   github: "https://github.com/embedologist",
-  linkedin: "https://linkedin.com/in/", // Add your specific LinkedIn handle here
+  linkedin: "https://www.linkedin.com/in/tjp24",
   
   // Asset Paths (Clean, absolute paths for custom domain)
   image: "/profile.jpg",

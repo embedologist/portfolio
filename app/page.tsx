@@ -6,7 +6,6 @@ import ExperienceTimeline from '@/components/ExperienceTimeline';
 import CoreExpertise from '@/components/CoreExpertise';
 import TechnicalSkills from '@/components/TechnicalSkills';
 import FeaturedProjects from '@/components/FeaturedProjects';
-import HuggingFaceShowcase from '@/components/HuggingFaceShowcase';
 import EducationCertifications from '@/components/EducationCertifications';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -23,7 +22,6 @@ export default function Home() {
       <CoreExpertise />
       <TechnicalSkills />
       <FeaturedProjects />
-      <HuggingFaceShowcase />
       <EducationCertifications />
       <Contact />
       <Footer />

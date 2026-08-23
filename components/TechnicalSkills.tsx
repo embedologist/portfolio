@@ -7,8 +7,8 @@ export default function TechnicalSkills() {
     <section id="skills" className="py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <p className="text-cyan-500 text-sm font-bold uppercase tracking-widest">Technical Competencies</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold">Skills & Domain Mastery</h2>
+          <p className="text-cyan-600 dark:text-cyan-400 text-sm font-bold uppercase tracking-widest">Technical Competencies</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Skills & Domain Mastery</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

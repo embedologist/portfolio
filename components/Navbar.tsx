@@ -27,13 +27,13 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-slate-900/80 backdrop-blur-md border-b border-slate-800 py-3 shadow-lg'
+          ? 'bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-3 shadow-md dark:shadow-lg'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="text-xl font-extrabold tracking-widest text-white hover:text-cyan-400 transition-colors uppercase">
+        <a href="#home" className="text-xl font-extrabold tracking-widest text-slate-900 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors uppercase">
           {PORTFOLIO_DATA.name}
         </a>
 
@@ -43,7 +43,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors"
+              className="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
             >
               {link.name}
             </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
             href={PORTFOLIO_DATA.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 px-4 py-2 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold transition-all shadow-md shadow-cyan-500/20"
+            className="flex items-center space-x-2 px-4 py-2 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold transition-all shadow-md shadow-cyan-500/20"
           >
             <FileText className="w-4 h-4" />
             <span>Resume</span>
@@ -64,7 +64,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-3 md:hidden">
           <ThemeToggle />
           <button
-            className="text-slate-300 hover:text-white"
+            className="text-slate-800 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-white p-1"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -80,7 +80,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-900 border-b border-slate-800"
+            className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800"
           >
             <div className="px-6 py-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
@@ -88,7 +88,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-medium text-slate-300 hover:text-cyan-400"
+                  className="text-base font-semibold text-slate-800 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400"
                 >
                   {link.name}
                 </a>
@@ -97,7 +97,7 @@ export default function Navbar() {
                 href={PORTFOLIO_DATA.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-cyan-500 text-slate-900 font-bold"
+                className="flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-cyan-500 text-white font-bold"
               >
                 <FileText className="w-5 h-5" />
                 <span>Resume</span>

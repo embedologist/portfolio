@@ -8,8 +8,8 @@ export default function ExperienceTimeline() {
     <section id="experience" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <p className="text-cyan-500 text-sm font-bold uppercase tracking-widest">Leadership Journey</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold">Professional Experience</h2>
+          <p className="text-cyan-600 dark:text-cyan-400 text-sm font-bold uppercase tracking-widest">Leadership Journey</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Professional Experience</h2>
         </div>
 
         <div className="relative border-l-2 border-slate-300 dark:border-slate-800 ml-4 md:ml-32 space-y-12">
@@ -23,7 +23,7 @@ export default function ExperienceTimeline() {
               className="relative pl-8 md:pl-12"
             >
               {/* Timeline Marker */}
-              <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-navy-950 border-2 border-cyan-500 flex items-center justify-center text-cyan-400 shadow-md">
+              <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-white dark:bg-navy-950 border-2 border-cyan-500 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shadow-md">
                 <Briefcase className="w-4 h-4" />
               </div>
 

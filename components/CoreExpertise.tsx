@@ -16,8 +16,8 @@ export default function CoreExpertise() {
     <section id="expertise" className="py-20 bg-slate-100/50 dark:bg-navy-900/40 border-y border-slate-200 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <p className="text-cyan-500 text-sm font-bold uppercase tracking-widest">Capabilities</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold">Core Engineering & Executive Pillars</h2>
+          <p className="text-cyan-600 dark:text-cyan-400 text-sm font-bold uppercase tracking-widest">Capabilities</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Core Engineering & Executive Pillars</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -32,10 +32,10 @@ export default function CoreExpertise() {
                 transition={{ delay: index * 0.1 }}
                 className="glass-card p-8 rounded-2xl hover:border-cyan-500 transition-all group"
               >
-                <div className="p-3.5 rounded-xl bg-cyan-500/10 text-cyan-500 w-fit group-hover:bg-cyan-500 group-hover:text-white transition-colors mb-6">
+                <div className="p-3.5 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 w-fit group-hover:bg-cyan-500 group-hover:text-white transition-colors mb-6">
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{domain.title}</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">{domain.title}</h3>
                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{domain.desc}</p>
               </motion.div>
             );

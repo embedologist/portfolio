@@ -17,14 +17,6 @@ export interface Project {
   impact: string;
 }
 
-export interface HuggingFaceProject {
-  title: string;
-  description: string;
-  embedUrl: string;
-  tags: string[];
-  metrics: string;
-}
-
 export interface Patent {
   title: string;
   number: string;
