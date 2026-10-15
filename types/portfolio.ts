@@ -11,16 +11,27 @@ export interface Experience {
 export interface Project {
   title: string;
   duration: string;
+  category?: string;
+  badge?: string;
+  link?: string;
   description: string;
   highlights: string[];
   technologies: string[];
   impact: string;
 }
 
+export interface HuggingFaceProject {
+  title: string;
+  description: string;
+  embedUrl: string;
+  tags: string[];
+  metrics: string;
+}
+
 export interface Patent {
   title: string;
   number: string;
-  publisher: string;
+  publisher?: string;
   summary: string;
 }
 

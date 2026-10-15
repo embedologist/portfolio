@@ -5,7 +5,7 @@ import { Briefcase, Calendar, MapPin, CheckCircle } from 'lucide-react';
 
 export default function ExperienceTimeline() {
   return (
-    <section id="experience" className="py-20 relative">
+    <section id="experience" className="py-20 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <p className="text-cyan-600 dark:text-cyan-400 text-sm font-bold uppercase tracking-widest">Leadership Journey</p>
@@ -23,7 +23,7 @@ export default function ExperienceTimeline() {
               className="relative pl-8 md:pl-12"
             >
               {/* Timeline Marker */}
-              <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-white dark:bg-navy-950 border-2 border-cyan-500 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shadow-md">
+              <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-white dark:bg-navy-950 border-2 border-cyan-500 flex items-center justify-center text-cyan-500 dark:text-cyan-400 shadow-md">
                 <Briefcase className="w-4 h-4" />
               </div>
 

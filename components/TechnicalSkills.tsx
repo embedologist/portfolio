@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function TechnicalSkills() {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <p className="text-cyan-600 dark:text-cyan-400 text-sm font-bold uppercase tracking-widest">Technical Competencies</p>
